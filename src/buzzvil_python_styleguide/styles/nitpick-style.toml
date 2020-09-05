@@ -1,0 +1,9 @@
+[nitpick]
+minimum_version = "0.22.0"
+
+[nitpick.styles]
+include = [
+    "black.toml",
+    "flake8.toml",
+    "mypy.toml",
+]
