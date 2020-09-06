@@ -39,7 +39,7 @@ steps:
   - name: publish
     image: zapier/python
     commands:
-      - poetry publish -r buzzvil
+      - poetry publish
 
 trigger:
   branch:
