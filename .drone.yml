@@ -1,0 +1,48 @@
+kind: pipeline
+type: docker
+name: flake8
+
+steps:
+  - name: flake8
+    image: zapier/python
+    commands:
+      - poetry install
+      - poetry run flake8 .
+
+trigger:
+  event:
+    - pull_request
+
+---
+kind: pipeline
+type: docker
+name: mypy
+
+steps:
+  - name: mypy
+    image: zapier/python
+    commands:
+      - poetry install
+      - poetry run mypy src
+
+trigger:
+  event:
+    - pull_request
+
+
+---
+kind: pipeline
+type: docker
+name: publish
+
+steps:
+  - name: publish
+    image: zapier/python
+    commands:
+      - poetry publish
+
+trigger:
+  branch:
+    - master
+  event:
+    - tag
