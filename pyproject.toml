@@ -76,14 +76,11 @@ exclude = "(\n  /(\n      .eggs\n    | .git\n    | .hg\n    | .mypy_cache\n    |
 include = "\\.pyi?$"
 line-length = 120
 skip-string-normalization = true
-target-version = ["py27", "py37", "py38", ]
+target-version = ["py27", "py38"]
 
 
 [tool.nitpick]
 style = "src/buzzvil_python_styleguide/styles/nitpick-style.toml"
-
-[nitpick.files."setup.cfg"]
-comma_separated_values = ["flake8.ignore", "flake8.exclude"]
 
 [nitpick.files."pyproject.toml"]
 comma_separated_values = ["tool.black.exclude"]
