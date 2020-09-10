@@ -7,6 +7,9 @@ steps:
     image: zapier/python
     commands:
       - poetry install
+      - pwd
+      - tree .
+      - ls -ahl .
       - poetry run flake8 .
 
 trigger:
