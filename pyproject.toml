@@ -61,7 +61,6 @@ django = ["django-stubs", "flake8-django"]
 [[tool.poetry.source]]
 name = "buzzvil"
 url = "http://pypi.buzzvil-internal.com/simple/"
-default = true
 
 
 [tool.poetry.plugins."flake8.extension"]
