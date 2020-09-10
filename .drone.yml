@@ -8,8 +8,8 @@ steps:
     commands:
       - poetry install
       - pwd
-      - tree .
       - ls -ahl .
+      - ls -ahl src
       - poetry run flake8 .
 
 trigger:
