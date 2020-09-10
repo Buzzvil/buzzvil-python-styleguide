@@ -147,7 +147,7 @@ version = "0.4.3"
 [[package]]
 category = "main"
 description = "Updated configparser from Python 3.7 for Python 2.6+."
-marker = "python_version < \"3.2\" or python_version >= \"2.7\" and python_version < \"2.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.2\""
 name = "configparser"
 optional = false
 python-versions = ">=2.6"
@@ -160,7 +160,7 @@ testing = ["pytest (>=3.5,<3.7.3 || >3.7.3)", "pytest-checkdocs (>=1.2)", "pytes
 [[package]]
 category = "main"
 description = "Backports and enhancements for the contextlib module"
-marker = "python_version < \"3.4\" or python_version >= \"2.7\" and python_version < \"2.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.4\""
 name = "contextlib2"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*"
@@ -300,6 +300,19 @@ version = "0.0.5"
 
 [package.dependencies]
 setuptools = "*"
+
+[[package]]
+category = "main"
+description = "flake8 plugin to call black as a code style validator"
+marker = "python_version >= \"3.6\" and python_version < \"4.0\""
+name = "flake8-black"
+optional = false
+python-versions = "*"
+version = "0.2.1"
+
+[package.dependencies]
+black = "*"
+flake8 = ">=3.0.0"
 
 [[package]]
 category = "main"
@@ -483,7 +496,7 @@ version = "2.10"
 [[package]]
 category = "main"
 description = "Read metadata from Python packages"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"3.8\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"3.8\")"
 name = "importlib-metadata"
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,>=2.7"
@@ -562,18 +575,9 @@ python-versions = "*"
 version = "0.6.1"
 
 [[package]]
-category = "main"
-description = "More routines for operating on iterables, beyond itertools"
-marker = "python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\")"
-name = "more-itertools"
-optional = false
-python-versions = ">=3.5"
-version = "8.5.0"
-
-[[package]]
 category = "dev"
 description = "More routines for operating on iterables, beyond itertools"
-marker = "python_version >= \"2.7\" and python_version <= \"2.7\""
+marker = "python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\")"
 name = "more-itertools"
 optional = false
 python-versions = "*"
@@ -725,7 +729,7 @@ version = "2.2.0"
 [[package]]
 category = "dev"
 description = "Python parsing module"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\")"
 name = "pyparsing"
 optional = false
 python-versions = ">=2.6, !=3.0.*, !=3.1.*, !=3.2.*"
@@ -882,7 +886,7 @@ version = "0.2.2"
 [[package]]
 category = "main"
 description = "scandir, a better directory iterator and faster os.walk()"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3\""
 name = "scandir"
 optional = false
 python-versions = "*"
@@ -891,7 +895,7 @@ version = "1.10.0"
 [[package]]
 category = "main"
 description = "Python 2 and 3 compatibility utilities"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3\" or python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\")"
 name = "six"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
@@ -991,7 +995,7 @@ version = ">=1.2.1"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\""
 name = "zipp"
 optional = false
 python-versions = ">=2.7"
@@ -1009,7 +1013,7 @@ testing = ["pathlib2", "unittest2", "jaraco.itertools", "func-timeout"]
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version >= \"3.6\" and python_version < \"3.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"3.6\" and python_version < \"3.8\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\")"
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -1023,7 +1027,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 django = ["django-stubs", "flake8-django"]
 
 [metadata]
-content-hash = "f7f808e61cdf93af16dcecaf5d08cef7d403f64b288561caee71cff9ea2ba6e7"
+content-hash = "c5e6f8b1880e9c78dd850eba7beda2a08c752dc5a5d8ac4e8682719f1e8a0671"
 lock-version = "1.0"
 python-versions = "~2.7 || ^3.6"
 
@@ -1116,6 +1120,9 @@ flake8 = [
 flake8-annotations-complexity = [
     {file = "flake8_annotations_complexity-0.0.5.tar.gz", hash = "sha256:5a1fed2b4e0d823c84134891914e6b47ae2e8d3191b356698542b3fad161d060"},
 ]
+flake8-black = [
+    {file = "flake8-black-0.2.1.tar.gz", hash = "sha256:f26651bc10db786c03f4093414f7c9ea982ed8a244cec323c984feeffdf4c118"},
+]
 flake8-bugbear = [
     {file = "flake8-bugbear-20.1.4.tar.gz", hash = "sha256:bd02e4b009fb153fe6072c31c52aeab5b133d508095befb2ffcf3b41c4823162"},
     {file = "flake8_bugbear-20.1.4-py36.py37.py38-none-any.whl", hash = "sha256:a3ddc03ec28ba2296fc6f89444d1c946a6b76460f859795b35b77d4920a51b63"},
@@ -1198,8 +1205,6 @@ mccabe = [
     {file = "mccabe-0.6.1.tar.gz", hash = "sha256:dd8d182285a0fe56bace7f45b5e7d1a6ebcbf524e8f3bd87eb0f125271b8831f"},
 ]
 more-itertools = [
-    {file = "more-itertools-8.5.0.tar.gz", hash = "sha256:6f83822ae94818eae2612063a5101a7311e68ae8002005b5e05f03fd74a86a20"},
-    {file = "more_itertools-8.5.0-py3-none-any.whl", hash = "sha256:9b30f12df9393f0d28af9210ff8efe48d10c94f73e5daf886f10c4b0b0b4f03c"},
     {file = "more-itertools-5.0.0.tar.gz", hash = "sha256:38a936c0a6d98a38bcc2d03fdaaedaba9f412879461dd2ceff8d37564d6522e4"},
     {file = "more_itertools-5.0.0-py2-none-any.whl", hash = "sha256:c0a5785b1109a6bd7fac76d6837fd1feca158e54e521ccd2ae8bfe393cc9d4fc"},
     {file = "more_itertools-5.0.0-py3-none-any.whl", hash = "sha256:fe7a7cae1ccb57d33952113ff4fa1bc5f879963600ed74918f1236e212ee50b9"},
