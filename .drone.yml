@@ -10,7 +10,7 @@ steps:
       - pwd
       - ls -ahl .
       - ls -ahl src
-      - poetry run flake8 .
+      - poetry run flake8
 
 trigger:
   event:
