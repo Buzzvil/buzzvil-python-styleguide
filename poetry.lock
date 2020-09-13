@@ -1036,7 +1036,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 django = ["django-stubs", "flake8-django"]
 
 [metadata]
-content-hash = "0b8428db22c532a055b9c359ca6993b06de8936e4127f1ad7864e7266f799c1c"
+content-hash = "3f2dc325d754f01b271a9ece4206c409384d01c1cac4ce446a37c908a8b37077"
 lock-version = "1.0"
 python-versions = "~2.7 || ^3.6"
 
