@@ -38,8 +38,14 @@ name: publish
 steps:
   - name: publish
     image: zapier/python
+    environment:
+      POETRY_HTTP_BASIC_BUZZVIL_USERNAME:
+        from_secret: pypi_username
+      POETRY_HTTP_BASIC_BUZZVIL_PASSWORD:
+        from_secret: pypi_password
     commands:
-      - poetry publish -r buzzvil
+      - poetry config repositories.buzzvil http://pypi.buzzvil-internal.com/
+      - poetry publish --repository buzzvil --build
 
 trigger:
   branch:
