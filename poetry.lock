@@ -112,18 +112,6 @@ python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*, !=3.4.*"
 version = "7.1.2"
 
 [[package]]
-category = "main"
-description = "Library to calculate Python functions cognitive complexity via code"
-marker = "python_version >= \"3.6\" and python_version < \"4.0\""
-name = "cognitive-complexity"
-optional = false
-python-versions = ">=3.6"
-version = "1.2.0"
-
-[package.dependencies]
-setuptools = "*"
-
-[[package]]
 category = "dev"
 description = "Cross-platform colored terminal text."
 marker = "python_version >= \"2.7\" and python_version < \"2.8\" and sys_platform == \"win32\" or python_version >= \"3.6\" and python_version < \"4.0\" and sys_platform == \"win32\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\" and sys_platform == \"win32\")"
@@ -339,19 +327,6 @@ flake8 = "*"
 
 [package.extras]
 test = ["coverage", "coveralls", "mock", "pytest", "pytest-cov"]
-
-[[package]]
-category = "main"
-description = "An extension for flake8 that validates cognitive functions complexity"
-marker = "python_version >= \"3.6\" and python_version < \"4.0\""
-name = "flake8-cognitive-complexity"
-optional = false
-python-versions = ">=3.6"
-version = "0.1.0"
-
-[package.dependencies]
-cognitive_complexity = "*"
-setuptools = "*"
 
 [[package]]
 category = "main"
@@ -871,7 +846,7 @@ version = "0.2.2"
 [[package]]
 category = "main"
 description = "scandir, a better directory iterator and faster os.walk()"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3\""
 name = "scandir"
 optional = false
 python-versions = "*"
@@ -880,7 +855,7 @@ version = "1.10.0"
 [[package]]
 category = "main"
 description = "Python 2 and 3 compatibility utilities"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3\" or python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version <= \"2.7\" or python_version >= \"3.6\" and python_version < \"4.0\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"4.0\") or python_version >= \"3.6\" and python_version < \"4.0\""
 name = "six"
 optional = false
 python-versions = ">=2.7, !=3.0.*, !=3.1.*, !=3.2.*"
@@ -980,7 +955,7 @@ version = ">=1.2.1"
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\""
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\")"
 name = "zipp"
 optional = false
 python-versions = ">=2.7"
@@ -998,7 +973,7 @@ testing = ["pathlib2", "unittest2", "jaraco.itertools", "func-timeout"]
 [[package]]
 category = "main"
 description = "Backport of pathlib-compatible object wrapper for zip files"
-marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\")"
+marker = "python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\") or python_version >= \"3.6\" and python_version < \"3.8\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\")) or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"4.0\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\")) or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"3.6\" and python_version < \"3.8\") and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"3.8\" or python_version >= \"3.6\" and python_version < \"4.0\" and (python_version >= \"2.7\" and python_version < \"2.8\" or python_version >= \"3.6\" and python_version < \"3.8\"))"
 name = "zipp"
 optional = false
 python-versions = ">=3.6"
@@ -1012,7 +987,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 django = ["django-stubs", "flake8-django"]
 
 [metadata]
-content-hash = "2e5b11787c61b2091bb5221ee38c86e36cd0f6d54822ad45e2d9825b77b9c3be"
+content-hash = "fabe83866185176e80d8336a49d6be4be07e3e992e4d21362edfbec6115e62fc"
 lock-version = "1.0"
 python-versions = "~2.7 || ^3.6"
 
@@ -1052,9 +1027,6 @@ chardet = [
 click = [
     {file = "click-7.1.2-py2.py3-none-any.whl", hash = "sha256:dacca89f4bfadd5de3d7489b7c8a566eee0d3676333fbb50030263894c38c0dc"},
     {file = "click-7.1.2.tar.gz", hash = "sha256:d2b5255c7c6349bc1bd1e59e08cd12acbbd63ce649f2588755783aa94dfb6b1a"},
-]
-cognitive-complexity = [
-    {file = "cognitive_complexity-1.2.0.tar.gz", hash = "sha256:3c2b433a9e41502932f6aa629e1f57a5e8f145956c54facbb5241a9492af6fb7"},
 ]
 colorama = [
     {file = "colorama-0.4.3-py2.py3-none-any.whl", hash = "sha256:7d73d2a99753107a36ac6b455ee49046802e59d9d076ef8e47b61499fa29afff"},
@@ -1115,9 +1087,6 @@ flake8-bugbear = [
 flake8-builtins = [
     {file = "flake8-builtins-1.5.3.tar.gz", hash = "sha256:09998853b2405e98e61d2ff3027c47033adbdc17f9fe44ca58443d876eb00f3b"},
     {file = "flake8_builtins-1.5.3-py2.py3-none-any.whl", hash = "sha256:7706babee43879320376861897e5d1468e396a40b8918ed7bccf70e5f90b8687"},
-]
-flake8-cognitive-complexity = [
-    {file = "flake8_cognitive_complexity-0.1.0.tar.gz", hash = "sha256:f202df054e4f6ff182b659c261922b9c684628a47beb19cb0973c50d6a7831c1"},
 ]
 flake8-comprehensions = [
     {file = "flake8-comprehensions-3.2.3.tar.gz", hash = "sha256:d5751acc0f7364794c71d06f113f4686d6e2e26146a50fa93130b9f200fe160d"},
