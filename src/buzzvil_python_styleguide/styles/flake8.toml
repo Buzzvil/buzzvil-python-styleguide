@@ -1,10 +1,15 @@
 ["setup.cfg".flake8]
-ignore = "W503,E203,FI12,FI15,FI16,FI17,FI18,FI50,FI51,FI53,FI54,FI55,FI58"
+ignore = "W503,E203,FI18,PT003,C408"
 
 max-line-length = 120
 require-code = true
 
 exclude = "venv*,**/migrations/"
 
+# flake8-functions
+max-parameters-amount = 10
 # flake8-annotations-complexity
 max-annotations-complexity = 4
+
+[nitpick.files."setup.cfg"]
+comma_separated_values = ["flake8.ignore", "flake8.exclude"]
