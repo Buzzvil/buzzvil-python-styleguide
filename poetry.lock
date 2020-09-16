@@ -385,6 +385,17 @@ setuptools = "*"
 
 [[package]]
 category = "main"
+description = "__future__ import checker, plugin for flake8"
+name = "flake8-future-import"
+optional = false
+python-versions = "*"
+version = "0.4.6"
+
+[package.dependencies]
+flake8 = "*"
+
+[[package]]
+category = "main"
 description = "mutable defaults flake8 extension"
 name = "flake8-mutable"
 optional = false
@@ -987,7 +998,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 django = ["django-stubs", "flake8-django"]
 
 [metadata]
-content-hash = "fabe83866185176e80d8336a49d6be4be07e3e992e4d21362edfbec6115e62fc"
+content-hash = "a47d1809efaa971913cbdd2d1c93cc6057fccf90f1d8cafb288da62b45059960"
 lock-version = "1.0"
 python-versions = "~2.7 || ^3.6"
 
@@ -1103,6 +1114,10 @@ flake8-eradicate = [
 flake8-functions = [
     {file = "flake8_functions-0.0.4-py3-none-any.whl", hash = "sha256:a0254bf465ca2ae8e3b0c9c948d2cac8d843094aa66496e0b9338755952c0b42"},
     {file = "flake8_functions-0.0.4.tar.gz", hash = "sha256:e6cde085e3e8ceade4a0256619aa0e381473aff76bbb1d37111f44bbc49ecace"},
+]
+flake8-future-import = [
+    {file = "flake8-future-import-0.4.6.tar.gz", hash = "sha256:9711df0394a2bb5af47986a816cafc2e7f20db9ebc729676553e13df6cabbcf8"},
+    {file = "flake8_future_import-0.4.6-py2.py3-none-any.whl", hash = "sha256:dceb036a81744b59a9ca34811b8a9f952a3585c95eaebdda15e8b04dafc77595"},
 ]
 flake8-mutable = [
     {file = "flake8-mutable-1.2.0.tar.gz", hash = "sha256:ee9b77111b867d845177bbc289d87d541445ffcc6029a0c5c65865b42b18c6a6"},
