@@ -1,6 +1,5 @@
 ["pyproject.toml".tool.black]
 line-length = 120
-include = '\.pyi?$'
 skip-string-normalization = true
 exclude = """
 (
