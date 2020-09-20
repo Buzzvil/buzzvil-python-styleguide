@@ -1027,7 +1027,7 @@ testing = ["jaraco.itertools", "func-timeout"]
 django = ["django-stubs", "flake8-django"]
 
 [metadata]
-content-hash = "6dc49e0c94bdda3ceaf6e1dc3493b7249fd875029d95d00015e8bd84108a6276"
+content-hash = "c8fef7c05fb72481c08f81acf7743b386b110ebc67381ae810b0bf14cb183043"
 lock-version = "1.0"
 python-versions = "~2.7 || ^3.6"
 
@@ -1053,7 +1053,6 @@ attrs = [
     {file = "backports.functools_lru_cache-1.6.1.tar.gz", hash = "sha256:8fde5f188da2d593bd5bc0be98d9abc46c95bb8a9dde93429570192ee6cc2d4a"},
 ]
 black = [
-    {file = "black-20.8b0-py3-none-any.whl", hash = "sha256:306bf2d809bd8ac79c11db6f4f0bc5bfcd0e4b74dcbc0e82b4d132a93444aec8"},
     {file = "black-20.8b0.tar.gz", hash = "sha256:0fc6b2f00ccd34cc444d41f24967377c2bc6d0b53f333c56376405ff6cd6f789"},
 ]
 certifi = [
