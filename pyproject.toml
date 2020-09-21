@@ -80,6 +80,3 @@ target-version = ["py27", "py38"]
 
 [tool.nitpick]
 style = "src/buzzvil_python_styleguide/styles/nitpick-style.toml"
-
-[nitpick.files."pyproject.toml"]
-comma_separated_values = ["tool.black.exclude"]
