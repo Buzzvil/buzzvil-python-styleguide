@@ -1,21 +1,21 @@
 ["pyproject.toml".tool.black]
 line-length = 120
 skip-string-normalization = true
-exclude = """
+force-exclude = '''
 (
   /(
-      .eggs
-    | .git
-    | .hg
-    | .mypy_cache
-    | .tox
-    | .venv
-    | _build
-    | buck-out
-    | build
-    | dist
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
   )/
-  | /migrations/
-  | venv*
+  | migrations/
+  | venv.?
 )
-"""
+'''
