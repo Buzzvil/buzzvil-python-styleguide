@@ -10,6 +10,7 @@ exclude = "venv*,**/migrations/"
 max-parameters-amount = 10
 # flake8-annotations-complexity
 max-annotations-complexity = 4
+max-pos_args = 2
 
 [nitpick.files."setup.cfg"]
 comma_separated_values = ["flake8.ignore", "flake8.exclude"]
