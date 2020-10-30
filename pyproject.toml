@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "buzzvil-python-styleguide"
-version = "0.2.1"
+version = "0.2.2"
 description = "Buzzvil's shared style preset"
 authors = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
 maintainers = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
@@ -23,6 +23,7 @@ classifiers = [
     "Programming Language :: Python :: 3.6",
     "Programming Language :: Python :: 3.7",
     "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
     "Topic :: Software Development :: Libraries :: Python Modules",
     "Topic :: Software Development :: Quality Assurance",
 ]
@@ -59,10 +60,6 @@ pytest = [
 
 [tool.poetry.extras]
 django = ["django-stubs", "flake8-django"]
-
-[[tool.poetry.source]]
-name = "buzzvil"
-url = "http://pypi.buzzvil-internal.com/"
 
 
 [tool.poetry.plugins."flake8.extension"]
