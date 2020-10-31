@@ -5,6 +5,7 @@ max-line-length = 120
 require-code = true
 
 exclude = "venv*,**/migrations/"
+per-file-ignores = "tests/**.py:FI18,setup.py:FI18"
 
 # flake8-functions
 max-parameters-amount = 10
@@ -13,4 +14,4 @@ max-annotations-complexity = 4
 max-pos_args = 2
 
 [nitpick.files."setup.cfg"]
-comma_separated_values = ["flake8.ignore", "flake8.exclude"]
+comma_separated_values = ["flake8.ignore", "flake8.exclude", "falek8.per-file-ignores"]
