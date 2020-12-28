@@ -33,7 +33,7 @@ Append code below to `pyproject.toml` with correct `VERSION` value. (e.g. `0.1.0
 
 ```toml
 [tool.nitpick]
-style = "https://github.com/Buzzvil/buzzvil-python-styleguide/raw/{VERSION}/src/buzzvil_python_styleguide/styles/nitpick-style.toml"
+style = "https://github.com/Buzzvil/buzzvil-python-styleguide/raw/v{VERSION}/src/buzzvil_python_styleguide/styles/nitpick-style.toml"
 ```
 
 ### 1.3 Run `flake8` to verify configuration
