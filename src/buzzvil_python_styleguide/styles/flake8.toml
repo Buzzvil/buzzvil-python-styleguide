@@ -1,5 +1,5 @@
 ["setup.cfg".flake8]
-ignore = "W503,E203,FI58,PT003,C408"
+ignore = "W503,E203,FI58,PT003,C408,C400,C401"
 
 max-line-length = 120
 require-code = true
