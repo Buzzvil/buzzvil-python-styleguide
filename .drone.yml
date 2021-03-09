@@ -12,7 +12,7 @@ steps:
         path: /root/.cache
     commands:
       - pip install --user --no-warn-script-location poetry
-      - poetry install
+      - python -m poetry install
 
   - name: flake8
     image: python:3.9-alpine
