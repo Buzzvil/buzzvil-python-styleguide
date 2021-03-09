@@ -6,8 +6,10 @@ steps:
   - name: install
     image: python:3.9-slim
     volumes: &cache-volume
-      - name: cache
+      - name: pip-cache
         path: /root/.local
+      - name: poetry-cache
+        path: /root/.cache
     commands:
       - pip install --user poetry
 
@@ -48,7 +50,9 @@ steps:
         - tag
 
 volumes:
-  - name: cache
+  - name: pip-cache
+    temp: {}
+  - name: poetry-cache
     temp: {}
 
 trigger:
