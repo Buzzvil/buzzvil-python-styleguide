@@ -60,3 +60,4 @@ trigger:
   ref:
     - refs/heads/master
     - refs/pull/**
+    - refs/tags/v*
