@@ -11,7 +11,7 @@ steps:
       - name: poetry-cache
         path: /root/.cache
     commands:
-      - pip install --user poetry
+      - pip install --user --no-warn-script-location poetry
       - poetry install
 
   - name: flake8
