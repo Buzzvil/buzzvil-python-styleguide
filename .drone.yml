@@ -9,13 +9,13 @@ steps:
       - name: cache
         path: /root/.local
     commands:
-      - pip install poetry
+      - pip install --user poetry
 
   - name: flake8
     image: python:3.9-alpine
     volumes: *cache-volume
     commands:
-      - poetry run flake8 .
+      - python -m poetry run flake8 .
     depends_on:
       - install
 
@@ -23,7 +23,7 @@ steps:
     image: python:3.9-alpine
     volumes: *cache-volume
     commands:
-      - poetry run mypy src
+      - python -m poetry run mypy src
     depends_on:
       - install
 
@@ -36,8 +36,8 @@ steps:
       POETRY_HTTP_BASIC_BUZZVIL_PASSWORD:
         from_secret: pypi_password
     commands:
-      - poetry config repositories.buzzvil http://pypi.buzzvil-internal.com/
-      - poetry publish --repository buzzvil --build
+      - python -m poetry config repositories.buzzvil http://pypi.buzzvil-internal.com/
+      - python -m poetry publish --repository buzzvil --build
     depends_on:
       - flake8
       - mypy
