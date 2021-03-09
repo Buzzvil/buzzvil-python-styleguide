@@ -1,43 +1,35 @@
 kind: pipeline
 type: kubernetes
-name: flake8
+name: test
 
 steps:
+  - name: install
+    image: python:3.9-slim
+    volumes: &cache-volume
+      - name: cache
+        path: /root/.local
+    commands:
+      - pip install poetry
+
   - name: flake8
-    image: zapier/python
+    image: python:3.9-alpine
+    volumes: *cache-volume
     commands:
-      - poetry install
       - poetry run flake8 .
+    depends_on:
+      - install
 
-trigger:
-  event:
-    - pull_request
-
----
-kind: pipeline
-type: kubernetes
-name: mypy
-
-steps:
   - name: mypy
-    image: zapier/python
+    image: python:3.9-alpine
+    volumes: *cache-volume
     commands:
-      - poetry install
       - poetry run mypy src
+    depends_on:
+      - install
 
-trigger:
-  event:
-    - pull_request
-
-
----
-kind: pipeline
-type: kubernetes
-name: publish
-
-steps:
   - name: publish
-    image: zapier/python
+    image: python:3.9-alpine
+    volumes: *cache-volume
     environment:
       POETRY_HTTP_BASIC_BUZZVIL_USERNAME:
         from_secret: pypi_username
@@ -46,9 +38,20 @@ steps:
     commands:
       - poetry config repositories.buzzvil http://pypi.buzzvil-internal.com/
       - poetry publish --repository buzzvil --build
+    depends_on:
+      - flake8
+      - mypy
+    when:
+      branch:
+        - master
+      event:
+        - tag
+
+volumes:
+  - name: cache
+    temp: {}
 
 trigger:
-  branch:
-    - master
-  event:
-    - tag
+  ref:
+    - refs/heads/master
+    - refs/pull/**
