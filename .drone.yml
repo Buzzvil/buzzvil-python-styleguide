@@ -15,7 +15,7 @@ steps:
       - python -m poetry install
 
   - name: flake8
-    image: python:3.9-alpine
+    image: python:3.9-slim
     volumes: *cache-volume
     commands:
       - python -m poetry run flake8 .
@@ -23,7 +23,7 @@ steps:
       - install
 
   - name: mypy
-    image: python:3.9-alpine
+    image: python:3.9-slim
     volumes: *cache-volume
     commands:
       - python -m poetry run mypy src
@@ -31,7 +31,7 @@ steps:
       - install
 
   - name: publish
-    image: python:3.9-alpine
+    image: python:3.9-slim
     volumes: *cache-volume
     environment:
       POETRY_HTTP_BASIC_BUZZVIL_USERNAME:
