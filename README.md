@@ -7,7 +7,7 @@
 
 ## 사용하는 툴
 
-### `flake8`
+### flake8
 
 buzzvil에서 사용하는 설정: [링크](https://github.com/Buzzvil/buzzvil-python-styleguide/blob/master/src/buzzvil_python_styleguide/styles/flake8.toml)
 
@@ -26,7 +26,7 @@ buzzvil에서 사용하는 설정: [링크](https://github.com/Buzzvil/buzzvil-p
 
 **항상 프로젝트의 root directory에서 실행해야함**
 
-`.venv` 같이 dependency가 프로젝트 directory에 포함된 경우 그 코드 또한 `flake8`의 검사 대상이 됨.
+`.venv` 같이 dependency가 프로젝트 directory에 포함된 경우 그 코드 또한 flake8의 검사 대상이 됨.
 이 경우 [`--extend-exclude`](https://flake8.pycqa.org/en/latest/user/options.html?highlight=exclude#cmdoption-flake8-extend-exclude) 같은 옵션으로 해당 폴더를 제외해야한다.
 (**`venv`는 이미 buzzvil의 설정 파일에 exclude 되어있다.**)
 
@@ -35,23 +35,23 @@ flake8 .
 ```
 
 
-### `black`
+### black
 
 buzzvil에서 사용하는 설정: [링크](https://github.com/Buzzvil/buzzvil-python-styleguide/blob/master/src/buzzvil_python_styleguide/styles/black.toml)
 
 코드를 특정한 스타일에 맞게 자동으로 변경해주는 formatter 툴.
 
-#### `black`과 `flake8` 역할 차이
+#### black과 flake8 역할 차이
 
-`flake8`과 같이 쓰는 이유는, `flake8`은 문제를 찾아내기만할뿐 수정해주진 않지만 `black`은 문제를 자동으로 수정해서 코드를 고쳐준다.
+flake8과 같이 쓰는 이유는, flake8은 문제를 찾아내기만할뿐 수정해주진 않지만 black은 문제를 자동으로 수정해서 코드를 고쳐준다.
 
-`black`의 자동화가 있어도 `flake8`을 쓰는 이유는, `black`은 찾을 수 없는 문제를 `flake8`은 찾을 수 있는 경우가 있다. 또한 모든 lint 에러를 자동으로 고칠 수 없기 때문이다. (예시: `if`의 중첩이 너무 깊은 경우)
+black의 자동화가 있어도 flake8을 쓰는 이유는, black은 찾을 수 없는 문제를 flake8은 찾을 수 있는 경우가 있다. 또한 모든 lint 에러를 자동으로 고칠 수 없기 때문이다. (예시: `if`의 중첩이 너무 깊은 경우)
 
-#### `black`과 `flake8`의 실행 순서
+#### black과 flake8의 실행 순서
 
-보통 `black`이 자동으로 고칠 문제들은 `flake8`또한 찾을 수 있기 때문에 `black`을 먼저 실행하고 `flake8`로 남아있는 문제들을 확인한다.
+보통 black이 자동으로 고칠 문제들은 flake8또한 찾을 수 있기 때문에 black을 먼저 실행하고 flake8로 남아있는 문제들을 확인한다.
 
-`black` 실행 없이 `flake8`을 실행하는 경우에는 아래와 같이 두개의 에러가 발생할 수 있다. (`flake8-black`를 설치했기 때문에 `BLK100` 에러가 추가로 발생함. `black`과 `flake8`만 설치한다면 `E201`만 발생)
+black 실행 없이 flake8을 실행하는 경우에는 아래와 같이 두개의 에러가 발생할 수 있다. (`flake8-black`를 설치했기 때문에 `BLK100` 에러가 추가로 발생함. black과 flake8만 설치한다면 `E201`만 발생)
 
 ##### 코드
 
@@ -59,7 +59,7 @@ buzzvil에서 사용하는 설정: [링크](https://github.com/Buzzvil/buzzvil-p
 cost_video_owner = models.BigIntegerField( )
 ```
 
-##### `flake8` 실행 결과
+##### flake8 실행 결과
 
 ```
 <CODE_PATH>:<LINE_NUMBER>:47: E201 whitespace after '('
@@ -77,7 +77,7 @@ black .
 ```
 
 
-### `mypy`
+### mypy
 
 buzzvil에서 사용하는 설정: [링크](https://github.com/Buzzvil/buzzvil-python-styleguide/blob/master/src/buzzvil_python_styleguide/styles/mypy.toml)
 
@@ -104,9 +104,9 @@ mypy -p <PACkAGE_NAME> -p <PACKAGE_NAME>
 
 ## 설정파일들의 일괄 적용 방식
 
-`nitpick`이라는 `flake8`의 plugin을 사용한다. https://github.com/andreoliwa/nitpick
+`nitpick`이라는 flake8의 plugin을 사용한다. https://github.com/andreoliwa/nitpick
 
-간단하게 설명하면, https://github.com/Buzzvil/buzzvil-python-styleguide/tree/master/src/buzzvil_python_styleguide/styles 의 파일들에서 볼 수 있듯, 파일과 (예: `setup.cfg`) 해당 파일에 있어야할 설정값을 정의해놓으면, `flake8` 실행시 그 파일들 읽어서 설정값이 포함되어있는지 확인한다.
+간단하게 설명하면, https://github.com/Buzzvil/buzzvil-python-styleguide/tree/master/src/buzzvil_python_styleguide/styles 의 파일들에서 볼 수 있듯, 파일과 (예: `setup.cfg`) 해당 파일에 있어야할 설정값을 정의해놓으면, flake8 실행시 그 파일들 읽어서 설정값이 포함되어있는지 확인한다.
 
 한마디로 코드 대신 설정값을 lint 하는 플러그인.
 
@@ -116,7 +116,7 @@ mypy -p <PACkAGE_NAME> -p <PACKAGE_NAME>
 
 ### 2.1 기존 dependency 삭제
 
-`requirements-dev.in` 혹은 `requirements.in` 에서 `flake8`, `black`, `mypy`관련된 모든 패키지를 삭제한다.
+`requirements-dev.in` 혹은 `requirements.in` 에서 flake8, black, mypy관련된 모든 패키지를 삭제한다.
 
 ### 2.2 `buzzvil-python-styleguide` 추가
 
@@ -163,4 +163,4 @@ require-code = True
 
 ### 2.4 CI 및 docker-compose, Makefile에서 각 툴의 실행줄 수정
 
-1 을 참고해서 `flake8`, `black`, `mypy`의 실행줄을 변경한다.
+1 을 참고해서 flake8, black, mypy의 실행줄을 변경한다.
