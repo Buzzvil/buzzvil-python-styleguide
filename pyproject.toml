@@ -34,7 +34,7 @@ python = "~2.7 || ^3.6"
 flake8 = ">=3.5"
 black = { version = "^20.8b1", python = "^3.6" }
 flake8-builtins = "^1.5.3"
-mypy = { version = "0.812", python = "^3.6" }
+mypy = { version = "0.901", python = "^3.6" }
 flake8-bugbear = { version = "^21.4.3", python = "^3.6" }
 flake8-comprehensions = { version = "^3.4.0", python = "^3.6" }
 flake8-django = { version = "^1.1.1", optional = true, python = "^3.6" }
