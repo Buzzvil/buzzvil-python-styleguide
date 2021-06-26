@@ -14,6 +14,7 @@ max-annotations-complexity = 4
 max-pos_args = 2
 # flake8-pytest-style
 pytest-parametrize-values-type = 'tuple'
+eradicate-whitelist = 'mypy:#noqa:'
 
 [nitpick.files."setup.cfg"]
 comma_separated_values = ["flake8.ignore", "flake8.exclude", "flake8.per-file-ignores"]
