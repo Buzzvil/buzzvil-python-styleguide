@@ -1,8 +1,10 @@
+from typing_extensions import Final
+
 try:
-    import importlib_metadata
+    from importlib.metadata import version
 except ModuleNotFoundError:
-    import importlib.metadata as importlib_metadata
+    from importlib_metadata import version
 
-__version__ = importlib_metadata.version(__name__)
+__version__: Final[str] = version(__name__)
 
-from buzzvil_python_styleguide.plugin import RequestsTimeoutPlugin  # noqa: F401
+from buzzvil_python_styleguide.plugin import RequestsTimeoutPlugin  # noqa: E402
