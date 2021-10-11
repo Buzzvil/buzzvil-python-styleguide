@@ -23,10 +23,10 @@ class FuncCallVisitor(ast.NodeVisitor):
         self._name.appendleft(node.id)
 
     def visit_Attribute(self, node: ast.Attribute) -> None:  # noqa: N802
-        try:
-            self._name.appendleft(node.attr)
+        self._name.appendleft(node.attr)
+        if isinstance(node.value, ast.Name):
             self._name.appendleft(node.value.id)
-        except AttributeError:
+        else:
             self.generic_visit(node)
 
 
