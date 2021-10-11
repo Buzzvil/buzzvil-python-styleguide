@@ -24,7 +24,7 @@ class FuncCallVisitor(ast.NodeVisitor):
 
     def visit_Attribute(self, node: ast.Attribute) -> None:  # noqa: N802
         self._name.appendleft(node.attr)
-        if isinstance(node.value, ast.Name):
+        if isinstance(node.value, ast.Name):  # type: ignore[misc]
             self._name.appendleft(node.value.id)
         else:
             self.generic_visit(node)
@@ -44,7 +44,7 @@ class RequestsTimeoutPlugin:
         :return: (lineno, col_offset, error_string, Type)
         """
         for node in ast.walk(self.tree):
-            if not isinstance(node, ast.Call):
+            if not isinstance(node, ast.Call):  # type: ignore[misc]
                 continue
 
             callvisitor = FuncCallVisitor()
