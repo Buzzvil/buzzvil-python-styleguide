@@ -1,6 +1,10 @@
-# coding: UTF-8
-from __future__ import absolute_import, division, print_function, unicode_literals
+from typing_extensions import Final
 
-__version__ = '0.3.1'
+try:
+    from importlib.metadata import version
+except ModuleNotFoundError:
+    from importlib_metadata import version
 
-from buzzvil_python_styleguide.plugin import RequestsTimeoutPlugin  # noqa: F401
+__version__: Final[str] = version(__name__)
+
+from buzzvil_python_styleguide.plugin import RequestsTimeoutPlugin  # noqa: E402

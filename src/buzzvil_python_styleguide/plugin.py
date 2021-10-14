@@ -1,48 +1,50 @@
-# coding: UTF-8
-from __future__ import absolute_import, division, print_function, unicode_literals
-
 import ast
 from collections import deque
+from typing import ClassVar, Deque, Iterable, Tuple, Type
 
 import buzzvil_python_styleguide
 
 
 class FuncCallVisitor(ast.NodeVisitor):
-    def __init__(self):
+    _name: Deque[str]
+
+    def __init__(self) -> None:
         self._name = deque()
 
     @property
-    def name(self):
+    def name(self) -> str:
         return '.'.join(self._name)
 
     @name.deleter
-    def name(self):
+    def name(self) -> None:
         self._name.clear()
 
-    def visit_Name(self, node):  # noqa: N802
+    def visit_Name(self, node: ast.Name) -> None:  # noqa: N802
         self._name.appendleft(node.id)
 
-    def visit_Attribute(self, node):  # noqa: N802
-        try:
-            self._name.appendleft(node.attr)
+    def visit_Attribute(self, node: ast.Attribute) -> None:  # noqa: N802
+        self._name.appendleft(node.attr)
+        if isinstance(node.value, ast.Name):  # type: ignore[misc]
             self._name.appendleft(node.value.id)
-        except AttributeError:
+        else:
             self.generic_visit(node)
 
 
-class RequestsTimeoutPlugin(object):
-    name = buzzvil_python_styleguide.__name__
-    version = buzzvil_python_styleguide.__version__
+class RequestsTimeoutPlugin:
+    name: ClassVar[str] = buzzvil_python_styleguide.__name__
+    version: ClassVar[str] = buzzvil_python_styleguide.__version__
 
-    def __init__(self, tree):
+    tree: ast.AST
+
+    def __init__(self, tree: ast.AST) -> None:
         self.tree = tree
 
-    def run(self):
+    def run(self) -> Iterable[Tuple[int, int, str, Type['RequestsTimeoutPlugin']]]:
         """
         :return: (lineno, col_offset, error_string, Type)
         """
         for node in ast.walk(self.tree):
-            if not isinstance(node, ast.Call):
+            if not isinstance(node, ast.Call):  # type: ignore[misc]
                 continue
 
             callvisitor = FuncCallVisitor()
