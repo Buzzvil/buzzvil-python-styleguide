@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "buzzvil-python-styleguide"
-version = "1.0.1"
+version = "1.0.2"
 description = "Buzzvil's shared style preset"
 authors = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
 maintainers = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
@@ -34,7 +34,7 @@ python = "^3.6.2"
 flake8 = ">=3.5"
 black = "^21.9b0"
 flake8-builtins = "^1.5.3"
-mypy = "^0.910"
+mypy = ">=0.910"
 flake8-bugbear = "^21.9.2"
 flake8-comprehensions = "^3.7.0"
 flake8-django = { version = "^1.1.2", optional = true }
