@@ -2,7 +2,7 @@ import ast
 
 import pytest
 
-from buzzvil_python_styleguide.plugin import FuncCallVisitor, RequestsTimeoutPlugin
+from buzzvil_python_styleguide.plugin import RequestsTimeoutPlugin, get_invocation_line
 
 
 class TestFucCallVisitor:
@@ -21,10 +21,8 @@ class TestFucCallVisitor:
         ),
     )
     def test_name(self, source: str, expected: str) -> None:
-        v = FuncCallVisitor()
-        tree = ast.parse(source)
-        v.visit(tree)
-        assert expected == v.name
+        c = ast.parse(source).body[0].value  # type: ignore[attr-defined]
+        assert expected == get_invocation_line(c)
 
 
 class TestRequestsTimeoutPlugin:
