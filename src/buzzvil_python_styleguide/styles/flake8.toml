@@ -16,7 +16,7 @@ pytest-parametrize-values-type = 'tuple'
 eradicate-whitelist = 'mypy:#noqa:'
 # flake8-force-keyword-arguments
 kwargs-max-positional-arguments = 2
-kwargs-ignore-function-pattern-extend = '^pytest.mark.parametrize$'
+kwargs-ignore-function-pattern = '(:?^logger.(:?log|debug|info|warning|error|exception|critical)$|__setattr__$|__delattr__$|__getattr__$|^pytest.mark.parametrize$)'
 
 [nitpick.files."setup.cfg"]
-comma_separated_values = ["flake8.ignore", "flake8.exclude", "flake8.per-file-ignores", "flake8.kwargs-ignore-function-pattern-extend"]
+comma_separated_values = ["flake8.ignore", "flake8.exclude", "flake8.per-file-ignores"]
