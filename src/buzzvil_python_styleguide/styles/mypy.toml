@@ -18,3 +18,9 @@ no_implicit_reexport = true
 ##
 
 allow_redefinition = true
+
+# Output configuration
+show_error_context = true
+show_column_numbers = true
+show_error_codes = true
+pretty = true

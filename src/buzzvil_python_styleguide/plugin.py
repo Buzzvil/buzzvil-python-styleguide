@@ -1,33 +1,22 @@
 import ast
-from collections import deque
-from typing import ClassVar, Deque, Iterable, Tuple, Type
+from typing import ClassVar, Iterable, Tuple, Type
 
 import buzzvil_python_styleguide
 
 
-class FuncCallVisitor(ast.NodeVisitor):
-    _name: Deque[str]
+def get_invocation_line(c: ast.Call) -> str:
+    def dfs(a: ast.AST) -> str:
+        child = getattr(a, 'value', None)
+        name = getattr(a, 'id', getattr(a, 'attr', None))
 
-    def __init__(self) -> None:
-        self._name = deque()
+        if child is None or not isinstance(child, ast.AST):
+            if name is None or not isinstance(name, str):
+                return ''
+            return name
 
-    @property
-    def name(self) -> str:
-        return '.'.join(self._name)
+        return '.'.join(filter(None, (dfs(child), name)))
 
-    @name.deleter
-    def name(self) -> None:
-        self._name.clear()
-
-    def visit_Name(self, node: ast.Name) -> None:  # noqa: N802
-        self._name.appendleft(node.id)
-
-    def visit_Attribute(self, node: ast.Attribute) -> None:  # noqa: N802
-        self._name.appendleft(node.attr)
-        if isinstance(node.value, ast.Name):  # type: ignore[misc]
-            self._name.appendleft(node.value.id)
-        else:
-            self.generic_visit(node)
+    return dfs(c.func)
 
 
 class RequestsTimeoutPlugin:
@@ -44,13 +33,12 @@ class RequestsTimeoutPlugin:
         :return: (lineno, col_offset, error_string, Type)
         """
         for node in ast.walk(self.tree):
-            if not isinstance(node, ast.Call):  # type: ignore[misc]
+            if not isinstance(node, ast.Call):
                 continue
 
-            callvisitor = FuncCallVisitor()
-            callvisitor.visit(node.func)
+            invocation_line = get_invocation_line(node)
             # There can be different ways of calling requests method but this covers almost all cases.
-            if callvisitor.name not in ('requests.get', 'requests.post', 'session.get', 'session.post'):
+            if invocation_line not in ('requests.get', 'requests.post', 'session.get', 'session.post'):
                 continue
 
             if 'timeout' not in [k.arg for k in node.keywords]:
