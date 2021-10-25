@@ -40,6 +40,7 @@ flake8-breakpoint = "^1.1.0"
 flake8-bugbear = "^21.9.2"
 flake8-builtins = "^1.5.3"
 flake8-comprehensions = "^3.7.0"
+flake8-datetimez = "^20.10.0"
 flake8-django = { version = "^1.1.2", optional = true }
 flake8-eradicate = "^1.2.0"
 flake8-force-keyword-arguments = "^1.0.0"
