@@ -70,7 +70,7 @@ cost_video_owner = models.BigIntegerField( )
 
 **항상 프로젝트의 root directory에서 실행해야함**
 
-[IDE 연동](https://black.readthedocs.io/en/stable/editor_integration.html) 또한 가능
+[IDE 연동](https://black.readthedocs.io/en/stable/integrations/editors.html) 또한 가능
 
 ```bash
 black .
@@ -134,11 +134,9 @@ buzzvil-python-styleguide==LATEST_RELEASE
 
 `pyproject.toml`에 아래 항목 추가 (파일이 없다면 project root directory에 추가)
 
-(`VERSION`에는 패키지 버전과 동일한 값을 사용한다)
-
 ```toml
 [tool.nitpick]
-style = "https://github.com/Buzzvil/buzzvil-python-styleguide/raw/v{VERSION}/src/buzzvil_python_styleguide/styles/nitpick-style.toml"
+style = "py://buzzvil_python_styleguide/styles/nitpick-style.toml"
 ```
 
 ### 2.4 툴들의 설정파일 적용
