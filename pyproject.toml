@@ -75,7 +75,7 @@ target-version = ["py36", "py37", "py38", "py39"]
 
 
 [tool.nitpick]
-style = "src/buzzvil_python_styleguide/styles/nitpick-style.toml"
+style = "py://buzzvil_python_styleguide/styles/nitpick-style.toml"
 cache = "never"
 
 [tool.mypy]
