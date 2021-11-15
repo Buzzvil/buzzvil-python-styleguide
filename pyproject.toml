@@ -54,7 +54,7 @@ importlib-metadata = {version = "*", python = "<3.8"}
 mypy = ">=0.910"
 nitpick = "^0.28.0"
 pep8-naming = "^0.12.1"
-typing-extensions = { version = "^3.7.4.3", python = "<3.8" }
+typing-extensions = { version = "^4.0.0", python = "<3.8" }
 
 [tool.poetry.dev-dependencies]
 pytest = "^6.2.5"
