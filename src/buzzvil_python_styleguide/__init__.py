@@ -1,4 +1,5 @@
 # mypy: allow_untyped_calls
+from __future__ import annotations
 
 import sys
 
