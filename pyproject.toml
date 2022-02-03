@@ -71,7 +71,7 @@ BZ = "buzzvil_python_styleguide:RequestsTimeoutPlugin"
 force-exclude = "(\n  /(\n    \\.eggs\n  | \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n  )/\n  | migrations/\n  | venv.?\n)\n"
 line-length = 120
 skip-string-normalization = true
-target-version = ["py36", "py37", "py38", "py39"]
+target-version = ["py36", "py37", "py38", "py39", "py310"]
 
 
 [tool.nitpick]
