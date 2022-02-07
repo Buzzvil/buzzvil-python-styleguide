@@ -5,7 +5,7 @@ max-line-length = 120
 require-code = true
 
 exclude = "venv*,**/migrations/"
-per-file-ignores = "**/tests/**.py:FI18,CFQ001,E501,S101,tests/**.py:FI18,CFQ001,E501,S101,__init__.py:F401"
+per-file-ignores = "**/tests/**.py:FI18,CFQ001,E501,S101,FKA100,tests/**.py:FI18,CFQ001,E501,S101,FKA100,__init__.py:F401"
 
 # flake8-functions
 max-parameters-amount = 10
