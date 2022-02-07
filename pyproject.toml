@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "buzzvil-python-styleguide"
-version = "1.4.0"
+version = "1.4.1"
 description = "Buzzvil's shared style preset"
 authors = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
 maintainers = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
@@ -42,7 +42,7 @@ flake8-comprehensions = "^3.7.0"
 flake8-datetimez = "^20.10.0"
 flake8-django = { version = "^1.1.2", optional = true }
 flake8-eradicate = "^1.2.0"
-flake8-force-keyword-arguments = "^1.0.3"
+flake8-force-keyword-arguments = "^1.0.4"
 flake8-functions = "^0.0.6"
 flake8-future-import = "^0.4.6"
 flake8-logging-format = "^0.6.0"
@@ -67,7 +67,6 @@ BZ = "buzzvil_python_styleguide:RequestsTimeoutPlugin"
 
 
 [tool.black]
-force-exclude = "(\n  /(\n    \\.eggs\n  | \\.git\n  | \\.hg\n  | \\.mypy_cache\n  | \\.tox\n  | \\.venv\n  | _build\n  | buck-out\n  | build\n  | dist\n  )/\n  | migrations/\n  | venv.?\n)\n"
 line-length = 120
 skip-string-normalization = true
 target-version = ["py37", "py38", "py39", "py310"]
