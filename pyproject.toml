@@ -34,7 +34,7 @@ django-stubs = { version = "^1.9.0", optional = true }
 flake8 = ">=3.8"
 flake8-annotations-complexity = "^0.0.6"
 flake8-bandit = "^2.1.2"
-flake8-black = "^0.2.3"
+flake8-black = "^0.3.2"
 flake8-breakpoint = "^1.1.0"
 flake8-bugbear = "^22.1.11"
 flake8-builtins = "^1.5.3"
