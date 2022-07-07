@@ -4,7 +4,7 @@ build-backend = "poetry.masonry.api"
 
 [tool.poetry]
 name = "buzzvil-python-styleguide"
-version = "1.4.2"
+version = "1.5.0"
 description = "Buzzvil's shared style preset"
 authors = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
 maintainers = ["Isac Byeonghoon Yoo <isac.yoo@buzzvil.com>"]
