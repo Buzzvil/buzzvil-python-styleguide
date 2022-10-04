@@ -4,18 +4,18 @@ name: test
 
 steps:
   - name: install
-    image: python:3.9-slim
+    image: python:3.10-slim
     volumes: &cache-volume
       - name: pip-cache
         path: /root/.local
       - name: poetry-cache
         path: /root/.cache
     commands:
-      - pip install --user --no-warn-script-location poetry
+      - pip install --user --no-warn-script-location -U poetry
       - python -m poetry install
 
   - name: flake8
-    image: python:3.9-slim
+    image: python:3.10-slim
     volumes: *cache-volume
     commands:
       - python -m poetry run flake8 .
@@ -23,7 +23,7 @@ steps:
       - install
 
   - name: mypy
-    image: python:3.9-slim
+    image: python:3.10-slim
     volumes: *cache-volume
     commands:
       - python -m poetry run mypy src
@@ -31,7 +31,7 @@ steps:
       - install
 
   - name: publish
-    image: python:3.9-slim
+    image: python:3.10-slim
     volumes: *cache-volume
     environment:
       POETRY_HTTP_BASIC_BUZZVIL_USERNAME:
