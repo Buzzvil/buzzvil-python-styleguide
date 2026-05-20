@@ -39,7 +39,7 @@ steps:
       POETRY_HTTP_BASIC_BUZZVIL_PASSWORD:
         from_secret: pypi_password
     commands:
-      - python -m poetry config repositories.buzzvil http://pypi.buzzvil-internal.com/
+      - python -m poetry config repositories.buzzvil https://pypi.buzzvil.dev/
       - python -m poetry publish --repository buzzvil --build
     depends_on:
       - flake8
